@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HAPPY BIRTHDAY</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <section id="intro" class="page active">
+
+        <div class="intro-content">
+
+            <p class="eyebrow">A PERSONAL MESSAGE</p>
+
+            <h1>
+                HAPPY<br>
+                BIRTHDAY
+            </h1>
+
+            <div class="divider"></div>
+
+            <p class="recipient">
+                QUÝ CÔ<br>
+                <strong>ĐINH THỊ THANH XUÂN</strong>
+            </p>
+
+            <p class="intro-description">
+                HOÀN THÀNH CÁC THỬ THÁCH SAU ĐỂ MỞ KHOÁ MÓN QUÀ
+            </p>
+
+            <button onclick="startExperience()">
+                BẮT ĐẦU
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section id="game1" class="page">
+
+        <div class="page-header">
+            <span>01 / 03</span>
+            <span>TRÒ CHƠI THỨ NHẤT</span>
+        </div>
+
+        <div class="game-title">
+
+            <p class="eyebrow">FIRST CHALLENGE</p>
+
+            <h2>
+                CUNG TÊN<br>
+                TÌNH YÊU
+            </h2>
+
+            <p>
+                BẮN ĐỦ 8 TRÁI TIM ĐỂ TIẾP TỤC
+            </p>
+
+            <div class="score">
+                <span>TIẾN ĐỘ</span>
+                <strong id="heartScore">0 / 8</strong>
+            </div>
+
+        </div>
+
+        <div id="heartArea" class="heart-area"></div>
+
+    </section>
+
+
+    <section id="game2" class="page">
+
+        <div class="page-header">
+            <span>02 / 03</span>
+            <span>TRÒ CHƠI THỨ HAI</span>
+        </div>
+
+        <div class="game-title">
+
+            <p class="eyebrow">SECOND CHALLENGE</p>
+
+            <h2>NÉ VẬT CẢN</h2>
+
+            <p>
+                NÉ ĐỦ 8 VẬT CẢN ĐỂ TIẾP TỤC
+            </p>
+
+            <div class="score">
+                <span>TIẾN ĐỘ</span>
+                <strong id="avoidScore">0 / 8</strong>
+            </div>
+
+        </div>
+
+        <canvas id="avoidCanvas"></canvas>
+
+        <div class="mobile-controls">
+
+            <button id="leftButton">
+                TRÁI
+            </button>
+
+            <button id="rightButton">
+                PHẢI
+            </button>
+
+        </div>
+
+        <div id="retryMessage" class="retry-message">
+
+            <div>
+
+                <p>BẠN ĐÃ VA VÀO VẬT CẢN</p>
+
+                <strong>HÃY THỬ LẠI</strong>
+
+                <button onclick="restartAvoidGame()">
+                    CHƠI LẠI
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="game3" class="page">
+
+        <div class="page-header">
+            <span>03 / 03</span>
+            <span>TRÒ CHƠI THỨ BA</span>
+        </div>
+
+        <div class="game-title">
+
+            <p class="eyebrow">FINAL CHALLENGE</p>
+
+            <h2>ĐẬP BÓNG</h2>
+
+            <p>
+                ĐẬP HẾT NHỮNG QUẢ BÓNG ĐỂ TIẾP TỤC
+            </p>
+
+            <div class="score">
+                <span>TIẾN ĐỘ</span>
+                <strong id="ballScore">0 / 12</strong>
+            </div>
+
+        </div>
+
+        <canvas id="ballCanvas"></canvas>
+
+    </section>
+
+
+    <section id="questions" class="page">
+
+        <div class="questions-container">
+
+            <p class="eyebrow">
+                BEFORE THE FINAL MESSAGE
+            </p>
+
+            <h2>
+                TRẢ LỜI CÁC<br>
+                CÂU HỎI SAU ĐÂY
+            </h2>
+
+
+            <div class="question">
+
+                <label>CÂU HỎI 01</label>
+
+                <p>
+                    QUÝ CÔ THÍCH ĐƯỢC TẶNG GÌ NHẤT
+                    NHÂN NGÀY SINH THẦN?
+                </p>
+
+                <textarea
+                    id="answer1"
+                    placeholder="CÂU TRẢ LỜI CỦA CÔ"
+                ></textarea>
+
+            </div>
+
+
+            <div class="question">
+
+                <label>CÂU HỎI 02</label>
+
+                <p>
+                    QUÝ CÔ CẢM THẤY TÔI LÀ
+                    NGƯỜI THẾ NÀO?
+                </p>
+
+                <textarea
+                    id="answer2"
+                    placeholder="CÂU TRẢ LỜI CỦA CÔ"
+                ></textarea>
+
+            </div>
+
+
+            <div class="question">
+
+                <label>CÂU HỎI 03</label>
+
+                <p>
+                    QUÝ CÔ CÓ THẤY HẠNH PHÚC KHÔNG?
+                </p>
+
+                <textarea
+                    id="answer3"
+                    placeholder="CÂU TRẢ LỜI CỦA CÔ"
+                ></textarea>
+
+            </div>
+
+
+            <button
+                class="final-button"
+                onclick="showLetter()"
+            >
+                TÔI ĐÃ NHẬN THÔNG TIN
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section id="letter" class="page">
+
+        <div class="letter-container">
+
+            <p class="eyebrow">
+                A MESSAGE FOR YOU
+            </p>
+
+            <h1>
+                CHÚC MỪNG<br>
+                SINH NHẬT
+            </h1>
+
+            <p class="letter-name">
+                QUÝ CÔ ĐINH THỊ THANH XUÂN
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="letter-text">
+
+                <p>
+                    MONG QUÝ CÔ TUỔI MỚI RỰC RỠ VÀ MAY MẮN,
+                    MÃ ĐÁO THÀNH CÔNG, THUẬN BUỒM XUÔI GIÓ,
+                    CÔNG THÀNH DANH TOẠI.
+                </p>
+
+                <p>
+                    HI VỌNG CÔ SẼ ĐỐI XỬ TỐT VỚI TÔI,
+                    ĐI CHƠI VỚI TÔI NHIỀU HƠN MỘT CHÚT.
+                </p>
+
+            </div>
+
+            <p class="signature">
+                FROM SOMEONE
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
