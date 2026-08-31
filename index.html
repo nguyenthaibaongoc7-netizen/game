@@ -1685,7 +1685,7 @@ ballCanvas.addEventListener(
 
 
 /* ==================================================
-   QUESTIONS
+   QUESTIONS + GOOGLE FORM
 ================================================== */
 
 document
@@ -1693,6 +1693,93 @@ document
     .addEventListener(
         "click",
         function(){
+
+            const answers =
+                document.querySelectorAll(
+                    "#questions textarea"
+                );
+
+            const answer1 =
+                answers[0].value.trim();
+
+            const answer2 =
+                answers[1].value.trim();
+
+            const answer3 =
+                answers[2].value.trim();
+
+
+            /* TẠO FORM ẨN */
+
+            const form =
+                document.createElement("form");
+
+            form.method = "POST";
+
+            form.action =
+                "https://docs.google.com/forms/d/e/1FAIpQLSeF1b2lCJVPuExUAhdlBdS51AK-t_cQGm5VExTh5-J2RerdQQ/formResponse";
+
+            form.target = "googleFormFrame";
+
+
+            /* CÂU 1 */
+
+            const input1 =
+                document.createElement("input");
+
+            input1.type = "hidden";
+
+            input1.name =
+                "entry.1982408657";
+
+            input1.value =
+                answer1;
+
+            form.appendChild(input1);
+
+
+            /* CÂU 2 */
+
+            const input2 =
+                document.createElement("input");
+
+            input2.type = "hidden";
+
+            input2.name =
+                "entry.1814497913";
+
+            input2.value =
+                answer2;
+
+            form.appendChild(input2);
+
+
+            /* CÂU 3 */
+
+            const input3 =
+                document.createElement("input");
+
+            input3.type = "hidden";
+
+            input3.name =
+                "entry.259006372";
+
+            input3.value =
+                answer3;
+
+            form.appendChild(input3);
+
+
+            /* GỬI VÀO GOOGLE FORM */
+
+            document.body.appendChild(form);
+
+            form.submit();
+
+            form.remove();
+
+
+            /* CHUYỂN SANG THƯ */
 
             show("letter");
 
@@ -1735,6 +1822,11 @@ window.addEventListener(
 );
 
 </script>
+
+<iframe
+    name="googleFormFrame"
+    style="display:none;"
+></iframe>
 
 </body>
 </html>
